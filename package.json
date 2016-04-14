@@ -2,8 +2,10 @@
   "name": "resio",
   "version": "1.0.0",
   "description": "Connect with your audience.",
-  "main": "index.js",
+  "main": "./server/server.js",
   "scripts": {
+    "start": "nodemon server/server.js",
+    "build": "browserify -t [ babelify --presets [ react es2015 ] ] src/index.js -o client/bundle.js",
     "test": "echo \"No Tests Specified\""
   },
   "repository": {
@@ -28,6 +30,7 @@
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
     "mocha": "^2.4.5",
+    "nodemon": "^1.9.1",
     "react-addons-test-utils": "^15.0.1",
     "sinon": "^1.17.3",
     "watchify": "^3.7.0",
