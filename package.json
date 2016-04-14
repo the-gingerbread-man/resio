@@ -1,0 +1,19 @@
+{
+  "name": "resio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No Tests Specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-gingerbread-man/resio.git"
+  },
+  "author": "Resio Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-gingerbread-man/resio/issues"
+  },
+  "homepage": "https://github.com/the-gingerbread-man/resio#readme"
+}
