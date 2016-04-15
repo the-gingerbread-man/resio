@@ -4,7 +4,7 @@ import Graphs from './Presenter-Graphs.jsx';
 
 class Dashboard extends React.Component{
 
-const socket = io();
+//const socket = io();
 
   getInitialState() {
     const dashboardData = [
@@ -21,7 +21,7 @@ const socket = io();
   }
 
   updateState() {
-    socket.on('newResponse', function(data) {
+    //socket.on('newResponse', function(data) {
       console.log(data);
       // this.setState({data});
     });

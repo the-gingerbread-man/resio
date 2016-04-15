@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-const socket = io();
+//const socket = io();
 
 class Choice extends React.Component{
 
   submitAnswer() {
-      socket.emit('viewerAnswer', 'Hello World from client');
+      //socket.emit('viewerAnswer', 'Hello World from client');
   }
 
   render () {
