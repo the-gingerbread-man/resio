@@ -1,18 +1,19 @@
 "use strict";
-const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const reactEngine = require('react-engine');
-var app = require('http').createServer(handler)
-var io = require('socket.io')(app);
+const http = require('http');
+const app = require('http').createServer(handler);
+const io = require('socket.io')(app);
 
 app.listen(3000);
 
 function handler (req, res) {
+  
   fs.readFile(__dirname + '/index.html',
+  
   function (err, data) {
-  	console.log(err);
     if (err) {
+      console.error(err);
       res.writeHead(500, { 'Content-Type': 'test/plain' });
       return res.end('Error loading index.html');
     }

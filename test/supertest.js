@@ -31,4 +31,22 @@ describe('HTTP Server', () => {
 	
 	});
 
+	describe('/bundle.js', () => {
+
+		describe('GET', () => {
+			it('responds with 200 status', done => {
+				request(HOST)
+					.get('/bundle.js')
+					.expect(200, done);
+			});
+
+			it('responds with text/javascript content type', done => {
+				request(HOST)
+					.get('/bundle.js')
+					.expect('Content-Type', /text\/javascript/, done);
+			});
+		});
+
+	});
+
 });
