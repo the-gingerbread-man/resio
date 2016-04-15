@@ -12,7 +12,7 @@ class QuestionContainer extends React.Component{
       <div id="">
         <h5>{this.props.questionState.question}</h5>
         {choices}
-        <button onClick={this.props.upDateQuestion}></button>
+        <button onClick={this.props.updateQuestion}></button>
       </div>
     );
   }
