@@ -9,12 +9,12 @@ class Dashboard extends React.Component{
   getInitialState() {
     const dashboardData = [
       {
-        responses: [ {1: 12}, {2: 9},
-                   {3: 19}, {4: 3} ]
+        responses: [ {count: 5}, {count: 9},
+                   {count: 19}, {count: 10} ]
       },
       {
-        responses: [ {1: 17}, {2: 19},
-                   {3: 10}, {4: 23} ]
+        responses: [ {count: 17}, {count: 19},
+                   {count: 10}, {count: 23} ]
       },
     ];
     return {Questions: dashboardData[0]};
