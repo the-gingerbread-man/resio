@@ -43,7 +43,7 @@ describe('HTTP Server', () => {
 			it('responds with text/javascript content type', done => {
 				request(HOST)
 					.get('/bundle.js')
-					.expect('Content-Type', /text\/javascript/, done);
+					.expect('Content-Type', /application\/javascript/, done);
 			});
 		});
 
