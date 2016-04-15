@@ -13,11 +13,11 @@ function handler (req, res) {
   function (err, data) {
   	console.log(err);
     if (err) {
-      res.writeHead(500);
+      res.writeHead(500, { 'Content-Type': 'test/plain' });
       return res.end('Error loading index.html');
     }
 
-    res.writeHead(200);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(data);
   });
 }
