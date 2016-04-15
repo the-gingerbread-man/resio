@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
-const app = require('http').createServer(handler);
 const express = require('express');
 const bodyParser = require('body-parser');
 const io = require('socket.io')(app);
