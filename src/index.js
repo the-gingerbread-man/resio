@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { brwoserHistory, Link, Redirect, Route, Router } from 'react-router';
+import { browserHistory, Link, Redirect, Route, Router } from 'react-router';
 import Questions from './components/Viewer-Questions.jsx';
 
 class App extends React.Component {
