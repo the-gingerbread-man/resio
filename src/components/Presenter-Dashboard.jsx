@@ -7,7 +7,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     const self = this;
-    const answerIncrease;
+    let answerIncrease;
     this.state = {
         'Carlos.MyPoll.0.0': 0,
         'Carlos.MyPoll.0.1': 0,
@@ -68,9 +68,7 @@ class Dashboard extends React.Component {
       });
     };
 
-  };
-
-  render () {
+  render() {
     return (
       <div>
       <h5>Showing Responses</h5>

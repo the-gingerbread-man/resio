@@ -14,8 +14,7 @@ class QuestionApp extends React.Component {
                         { cID: '', choiceText: 'Carlos', selected: false },
                       ],
             questionType: 'multipleChoice'
-            },
-
+          },
           { qID: '',
               questionText: 'Who is the coolest Codesmith staff member?',
               choices: [{ cID: '', choiceText: 'Victoria', selected: false },
@@ -23,14 +22,14 @@ class QuestionApp extends React.Component {
                           { cID: '', choiceText: 'Andy', selected: false },
                           { cID: '', choiceText: 'DavcID', selected: false },
                         ],
-            }],
               questionType: 'multipleChoice'
-            },
-            { qID: '',
+          },
+          { qID: '',
                 questionText: 'Thumbs up or thumbs down on the drinks last Thursday?',
                 choices: [ {cID: '', choiceText: 'Thumbs Up', selected: false}],
                 questionType: 'thumbs'
-              } ]
+          }
+        ]
       };
   }
 

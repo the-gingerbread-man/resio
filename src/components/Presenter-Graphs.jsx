@@ -6,11 +6,6 @@ var BarChart = rd3.BarChart;
 var PieChart = rd3.PieChart;
 
 class Graphs extends React.Component {
-  render() {
-    const questionsAnswered = this.props.answerState.map(
-      question => {
-        return (<IndividualGraph question={question} />);
-      });
 
   render () {
   	var q1 = [
