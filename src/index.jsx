@@ -8,6 +8,7 @@ import { browserHistory } from 'react-router';
 import QuestionApp from './components/Viewer-QuestionApp.jsx';
 import Dashboard from './components/Presenter-Dashboard.jsx';
 import Splash from './components/Splash.jsx';
+import PollForm from './components/Presenter-PollForm.jsx';
 
 class App extends React.Component {
   render() {
