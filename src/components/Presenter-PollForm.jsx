@@ -24,6 +24,7 @@ class PollForm extends React.Component {
     const updatedQuestions = this.state.questions;
     updatedQuestions.push(emptyChart);
     this.setState({ questions: updatedQuestions });
+    console.log('added question', this.state);
   }
 
   addChoice(questionIndex) {
@@ -46,7 +47,7 @@ class PollForm extends React.Component {
 
   render() {
     const questions = this.state.questions.map((data, index) => {
-      switch(question.chartType) {
+      switch(data.chartType) {
         case 'bar-chart':
           return <BarChartForm key={index} data={data} removeQuestion={this.removeQuestion} />
         case 'pie-chart':
@@ -59,7 +60,7 @@ class PollForm extends React.Component {
     return (
       <div className="poll_form">
         {questions}
-        <AddQuestionForm addQuestion={this.addQuestion} />
+        <AddQuestionForm addQuestion={this.addQuestion.bind(this)} />
       </div>
       );
   }
