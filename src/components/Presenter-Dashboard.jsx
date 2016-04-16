@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Graphs from './Presenter-Graphs.jsx';
 const socket = io();
 
-
 class Dashboard extends React.Component{
 
   constructor(props) {
@@ -75,7 +74,7 @@ class Dashboard extends React.Component{
 
   render () {
     return (
-      <div id="">
+      <div>
       <h5>Showing Responses</h5>
       <Graphs viewerResponse={this.state} />
       </div>

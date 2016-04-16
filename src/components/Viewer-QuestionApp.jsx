@@ -10,14 +10,21 @@ class QuestionApp extends React.Component{
         [ { qID: '',
              questionText: 'Who has the coolest scratch project?',
              choices: [ {cID: '', choiceText: 'Daniel', selected: false}, {cID: '', choiceText: 'Dave', selected: false},
-                         {cID: '', choiceText: 'Alex', selected: false}, {cID: '', choiceText: 'Carlos', selected: false} ]
+                         {cID: '', choiceText: 'Alex', selected: false}, {cID: '', choiceText: 'Carlos', selected: false} ],
+            questionType: 'multipleChoice'
             },
 
           { qID: '',
               questionText: 'Who is the coolest Codesmith staff member?',
               choices: [ {cID: '', choiceText: 'Victoria', selected: false}, {cID: '', choiceText: 'Hira', selected: false},
-                         {cID: '', choiceText: 'Andy', selected: false}, {cID: '', choiceText: 'DavcID', selected: false} ]
-            } ]
+                         {cID: '', choiceText: 'Andy', selected: false}, {cID: '', choiceText: 'DavcID', selected: false} ],
+              questionType: 'multipleChoice'
+            },
+            { qID: '',
+                questionText: 'Thumbs up or thumbs down on the drinks last Thursday?',
+                choices: [ {cID: '', choiceText: 'Thumbs Up', selected: false}],
+                questionType: 'thumbs'
+              } ]
       };
   }
 
