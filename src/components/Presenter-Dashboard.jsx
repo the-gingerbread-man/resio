@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Graphs from './Presenter-Graphs.jsx';
+const socket = io();
+
 
 class Dashboard extends React.Component{
 
 constructor(props) {
   super(props);
+  socket.on('serverResponse', function(data) {
+    data.split('.').map(el => console.log(el));
+  });
     this.state = { questions:
         [ { qID: 0,
              questionText: 'Who has the coolest scratch project?',
@@ -21,8 +26,8 @@ constructor(props) {
     }
 
   updateState() {
-    // socket.on('newResponse', function(data) {
-    //   console.log(data);
+    // socket.on('serverResponse', function(data) {
+    //   console.log('Server Response: ' + data);
     // });
   }
 
