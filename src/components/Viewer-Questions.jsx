@@ -10,6 +10,9 @@ class Questions extends React.Component{
     return (
       <div id="">
         {questions}
+        <div className="text-center col-md-4 col-md-offset-4">
+          <a href="/#/thanks"><button className="btn start">Finish Poll</button></a>
+        </div>
       </div>
     );
   }

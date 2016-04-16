@@ -8,6 +8,7 @@ import { browserHistory } from 'react-router';
 import QuestionApp from './components/Viewer-QuestionApp.jsx';
 import Dashboard from './components/Presenter-Dashboard.jsx';
 import Splash from './components/Splash.jsx';
+import ThanksComponent from './components/Viewer-Thanks.jsx';
 
 class App extends React.Component {
   render() {
@@ -31,6 +32,7 @@ ReactDOM.render(
       <Route name="Dashboard" path="/dash" component={Dashboard} />
       <Route name="Viewer" path="/viewer" component={QuestionApp} />
       <Route name="Splash" path="/splash" component={Splash} />
+      <Route name="ThanksPage" path="/thanks" component={ThanksComponent} />
     </Router>
   ),
   document.getElementById('app')

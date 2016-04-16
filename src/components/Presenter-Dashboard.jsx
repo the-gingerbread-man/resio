@@ -2,11 +2,11 @@ import React from 'react';
 import Graphs from './Presenter-Graphs.jsx';
 const socket = io();
 
-class Dashboard extends React.Component {
+class Dashboard extends React.Component{
 
   constructor(props) {
   super(props);
-    this.state = {questions: 
+    this.state = {questions:
 
       [
         {
