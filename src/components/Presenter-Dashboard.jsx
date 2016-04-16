@@ -5,74 +5,79 @@ const socket = io();
 class Dashboard extends React.Component {
 
   constructor(props) {
-    super(props);
-    const self = this;
-    let answerIncrease;
-    this.state = {
-        'Carlos.MyPoll.0.0': 0,
-        'Carlos.MyPoll.0.1': 0,
-        'Carlos.MyPoll.0.2': 0,
-        'Carlos.MyPoll.0.3': 0,
-        'Carlos.MyPoll.1.0': 0,
-        'Carlos.MyPoll.1.1': 0,
-        'Carlos.MyPoll.1.2': 0,
-        'Carlos.MyPoll.1.3': 0,
+  super(props);
+    this.state = {questions: 
 
-       // Questions:
-       //   [
-       //      {
-       //      questionText: 'Who has the coolest scratch project?',
-       //      choices: ["Alex", "Danny", "Dave", "Carlos"],
-       //      answers: [0, 0, 0, 0]
-       //      },
-       //      {
-       //      questionText: 'Who has the coolest scratch project?',
-       //      choices: ["Alex", "Danny", "Dave", "Carlos"],
-       //      answers: [0, 0, 0, 0]
-       //      }
-       //    ]
+      [
+        {
+          qType: 'bar',
+          question: 'Who has the coolest scratch project?',
+          choices: [
+                    {
+                      Alex: 0,
+                      Daniel: 0,
+                      Dave: 0,
+                      Carlos: 0
+                    }
+                   ]
+        },
+        {
+          qType: 'pie',
+          question: 'What is your favorite beer?',
+          choices: [
+                    {
+                      'Stone IPA': 0,
+                      'Corona Light': 0,
+                      'Guiness': 0,
+                      'Sierra Nevada': 0,
+                      'Blue Moon': 0,
+                      "I don't drink beer, I drink bourbon": 0
+                    }
+                   ]
+        },
+        {
+          qType: 'bar',
+          question: 'What was your favorite company that came to hiring day?',
+          choices: [
+                    {
+                      'Dog Vacay': 0,
+                      'Dollar Shave Club': 0,
+                      'LA Body Points': 0,
+                      Whisper: 0,
+                      Procore: 0,
+                      ESPN: 0,
+                      Ticketmaster: 0
+                    }
+                   ]
+        },
+        {
+          qType: 'pie',
+          question: 'Thumbs Up or Thumbs Down on drinks last Thursday?',
+          choices: [
+                    {
+                      Up: 0,
+                      Down: 0
+                    }
+                   ]
+        }
+      ]
    };
-        // Questions: [
-        //   {'Carlos.MyPoll.0.0': 0,
-        //   'Carlos.MyPoll.0.1': 0,
-        //   'Carlos.MyPoll.0.2': 0,
-        //   'Carlos.MyPoll.0.3': 0},
 
-        //   {'Carlos.MyPoll.1.0': 0,
-        //   'Carlos.MyPoll.1.1': 0,
-        //   'Carlos.MyPoll.1.2': 0,
-        //   'Carlos.MyPoll.1.3': 0}
-        // ]
+    var self = this;
+    socket.on('serverResponse', function(data) {
+      var parsedData = JSON.parse(data);
+      var choiceMade = parsedData.choice;
+      self.state.questions[parsedData.q].choices[0][choiceMade]++;
+      self.setState(self.state);
+    });
+  }
 
-        //questions:
-        // [ { qID: 0,
-        //      questionText: 'Who has the coolest scratch project?',
-        //      choices: [  {answered: '', choiceText: 'Daniel', selected: false},
-        //                  {answered: '', choiceText: 'Dave', selected: false},
-        //                  {answered: '', choiceText: 'Alex', selected: false},
-        //                  {answered: '', choiceText: 'Carlos', selected: false}
-        //                ],
-        //     },
-        //   { qID: 1,
-        //       questionText: 'Who is the coolest Codesmith staff member?',
-        //       choices: [ {answered: '', choiceText: 'Victoria', selected: false},
-        //                  {answered: '', choiceText: 'Hira', selected: false},
-        //                  {answered: '', choiceText: 'Andy', selected: false},
-        //                  {answered: '', choiceText: 'DavcID', selected: false}
-        //                  ],
-        //     }
-        // ],
-      socket.on('serverResponse', function(data) {
-        answerIncrease = { data: self.state[data]++ };
-        self.setState(answerIncrease);
-      });
-    };
+  render () {
 
-  render() {
     return (
       <div>
       <h5>Showing Responses</h5>
-      <Graphs viewerResponse={this.state} />
+      <Graphs questions={this.state.questions} />
       </div>
     );
   }
