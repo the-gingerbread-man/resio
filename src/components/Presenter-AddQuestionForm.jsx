@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddQuestionForm extends React.component {
+class AddQuestionForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -11,10 +11,14 @@ class AddQuestionForm extends React.component {
   }
 
   selectType(selection) {
+    console.log("AddQuestionForm.selectType called")
     this.setState({ selectedChartType: selection });
   }
 
   createQuestion() {
+    console.log("AddQuestionForm.createQuestion called");
+    console.log(this.state.selectedChartType);
+    console.log(this.state);
     // Don't create a new question if no type has been selected
     if (this.state.selectedChartType === null) {
       return;
@@ -39,7 +43,7 @@ class AddQuestionForm extends React.component {
     return (
         <div className="question_form">
           {graphTypeIcons}
-          <button onClick={this.createQuestion} />
+          <button onClick={this.createQuestion}>Add A Question</button>
         </div>
       );
   }

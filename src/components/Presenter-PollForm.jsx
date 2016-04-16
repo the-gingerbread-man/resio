@@ -1,8 +1,8 @@
 import React from 'react';
 import AddQuestionForm from './Presenter-AddQuestionForm.jsx';
-import BarGraphForm from './Presenter-BarGraphForm.jsx';
+import BarChartForm from './Presenter-BarChartForm.jsx';
 
-class PollForm extends React.component {
+class PollForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -45,9 +45,15 @@ class PollForm extends React.component {
   }
 
   render() {
-    const questions = this.state.questions.map((question, index) => {
-      // Change this to render different types of charts based on type selection
-      // return <Question key={index} data={question} removeQuestion={this.removeQuestion}  />
+    const questions = this.state.questions.map((data, index) => {
+      switch(question.chartType) {
+        case 'bar-chart':
+          return <BarChartForm key={index} data={data} removeQuestion={this.removeQuestion} />
+        case 'pie-chart':
+          return <PieChartForm key={index} data={data} removeQuestion={this.removeQuestion} />
+        case 'thumbs-up':
+          return <ThumbsUpForm key={index} data={data} removeQuestion={this.removeQuestion} />
+        }
     });
 
     return (

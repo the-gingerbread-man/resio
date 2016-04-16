@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarChart } from 'react-d3';
 
-class BarGraphForm extends React.component {
+class BarChartForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ class BarGraphForm extends React.component {
       return <input type="text" value={choice.x} />;
     });
     return (
-        <div className="bar_graph_form">
+        <div className="bar_chart_form">
           <BarChart
             data={this.props.data}
             width={500}
@@ -20,7 +20,7 @@ class BarGraphForm extends React.component {
             fill={"#3182bd"}
             title="Bar Chart"
           />
-          <form className="bar_graph_choices">
+          <form className="bar_chart_choices">
             {choices}
             <button onClick={this.props.addChoice} />
           </form>
@@ -29,7 +29,7 @@ class BarGraphForm extends React.component {
   }
 }
 
-export default BarGraphForm;
+export default BarChartForm;
 
 /*
 
