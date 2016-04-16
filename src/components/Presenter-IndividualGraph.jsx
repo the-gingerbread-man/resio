@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-class IndividualGraph extends React.Component{
-
-  render () {
+class IndividualGraph extends React.Component {
+  render() {
     return (
       <div id="">
         <h3>Count</h3>
