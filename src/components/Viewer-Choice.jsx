@@ -4,14 +4,16 @@ import ReactDOM from 'react-dom';
 
 class Choice extends React.Component{
 
-  submitAnswer() {
-      //socket.emit('viewerAnswer', 'Hello World from client');
+  submitAnswer(qIdentifier,cIdentifier) {
+    var response = ('Carlos.'+'MyPoll.'+qIdentifier+'.'+cIdentifier).toString();
+    console.log(response);
+      //socket.emit('viewerAnswer', response);
   }
 
   render () {
     return (
       <div id="">
-        <p>{this.props.qChoice} onClick={this.submitAnswer}</p>
+        <button onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.cIdentifier)}>{this.props.qChoice.choiceText}</button>
       </div>
     );
   }

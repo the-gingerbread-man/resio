@@ -4,34 +4,33 @@ import Graphs from './Presenter-Graphs.jsx';
 
 class Dashboard extends React.Component{
 
-//const socket = io();
-
-  getInitialState() {
-    const dashboardData = [
-      {
-        responses: [ {count: 5}, {count: 9},
-                   {count: 19}, {count: 10} ]
-      },
-      {
-        responses: [ {count: 17}, {count: 19},
-                   {count: 10}, {count: 23} ]
-      },
-    ];
-    return {Questions: dashboardData[0]};
-  }
+constructor(props) {
+  super(props);
+    this.state = { questions:
+        [ { qID: 0,
+             questionText: 'Who has the coolest scratch project?',
+             choices: [ {answered: '', choiceText: 'Daniel', selected: false}, {answered: '', choiceText: 'Dave', selected: false},
+                         {answered: '', choiceText: 'Alex', selected: false}, {answered: '', choiceText: 'Carlos', selected: false} ]
+            },
+          { qID: 1,
+              questionText: 'Who is the coolest Codesmith staff member?',
+              choices: [ {answered: '', choiceText: 'Victoria', selected: false}, {answered: '', choiceText: 'Hira', selected: false},
+                         {answered: '', choiceText: 'Andy', selected: false}, {answered: '', choiceText: 'DavcID', selected: false} ]
+            } ]
+      };
+    }
 
   updateState() {
-    //socket.on('newResponse', function(data) {
-      console.log(data);
-      // this.setState({data});
-    });
+    // socket.on('newResponse', function(data) {
+    //   console.log(data);
+    // });
   }
 
   render () {
     return (
       <div id="">
-      <h5>Showing Graphs</h5>
-        <Graphs answerState={this.state.responses} />
+      <h5>Showing Responses</h5>
+        <Graphs answerState={this.state.questions} />
       </div>
     );
   }

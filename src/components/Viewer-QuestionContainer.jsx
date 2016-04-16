@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import Choice from './Viewer-Choice.jsx';
 
 class QuestionContainer extends React.Component{
-
   render () {
-    const choices = this.props.questionState.choices.map((choice, i) => {
-      return <Choice key={i} qChoice={choice} />
+    console.log('in question container: ', this.props.question);
+    const choices = this.props.question.choices.map((choice, i) => {
+      return <Choice key= {i} qIdentifier= {this.props.qIdentifier} cIdentifier={i} qChoice={choice} />
     });
     return (
       <div id="">
-        <h5>{this.props.questionState.question}</h5>
+        <h5>{this.props.question.questionText}</h5>
         {choices}
-        <button onClick={this.props.updateQuestion}></button>
+        <button onClick={this.props.updateQuestion}>Next</button>
       </div>
     );
   }
