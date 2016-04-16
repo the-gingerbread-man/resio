@@ -5,15 +5,18 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-const HOST = `http://localhost:${PORT}`;
+const HOST = `http://localhost:3000`;
+Browser.localhost(HOST, 3000);
 
 describe('Front End Integration', function() {
 
 	const respondantBrowser = new Browser();
 	respondantBrowser.silent = true;
 
-	before(done => {
-		respondantBrowser.visit(`${HOST}`, done);
+	before(function(done) {
+		respondantBrowser.visit(`localhost:3000`, function() {
+			done();
+		});
 	});
 
 	describe('Respondant Page', () => {
@@ -29,4 +32,4 @@ describe('Front End Integration', function() {
 
 	});
 
-});
+}); 
