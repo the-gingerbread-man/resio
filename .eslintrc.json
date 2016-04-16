@@ -1,0 +1,22 @@
+{
+    "extends": "airbnb",
+    "root": true,
+    "env": {
+    	"browser": true,
+    	"node": true,
+    	"mocha": true
+    },
+    "plugins": [
+        "react"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals": {
+    	"__dirname": true
+    }
+}
