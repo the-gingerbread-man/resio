@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-const Router = require('react-router').Router
-const Route = require('react-router').Route
-const Link = require('react-router').Link
-const Redirect = require('react-router').Redirect;
-import { browserHistory } from 'react-router';
+import { browserHistory, Link, Redirect, Route, Router } from 'react-router';
 import QuestionApp from './components/Viewer-QuestionApp.jsx';
 import Dashboard from './components/Presenter-Dashboard.jsx';
 import Splash from './components/Splash.jsx';
