@@ -10,10 +10,10 @@ class IndividualGraph extends React.Component{
   render () {
 		var graph;
 		var title = this.props.question;
-		var qType = this.props.qType;
+		var qType = this.props.cType;
 		var eachChoice = this.props.qChoices['0']; 
 
-		if (qType === 'bar') {
+		if (cType === 'bar') {
 			var valueArray = [];
 			for (var key in eachChoice) {
 				var bar = {x: key, y: eachChoice[key]};
@@ -23,7 +23,7 @@ class IndividualGraph extends React.Component{
 			var component = <BarChart data={dataInfo} width={1000} height={200} fill={'#3182bd'} title={title} />
 		}
 
-		else if (qType === 'pie') {
+		else if (cType === 'pie') {
       var valueArray = [];
       var total = [];
       for (var key in eachChoice) {
