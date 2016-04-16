@@ -13,6 +13,10 @@ class Dashboard extends React.Component{
         'Carlos.MyPoll.0.1': 0,
         'Carlos.MyPoll.0.2': 0,
         'Carlos.MyPoll.0.3': 0,
+        'Carlos.MyPoll.1.0': 0,
+        'Carlos.MyPoll.1.1': 0,
+        'Carlos.MyPoll.1.2': 0,
+        'Carlos.MyPoll.1.3': 0,
 
        // Questions:
        //   [
