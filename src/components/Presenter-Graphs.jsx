@@ -6,7 +6,7 @@ class Graphs extends React.Component {
   render () {
     var choices = this.props.questions.map((question, i) => {
     	console.log(question.choices);
-      return <IndividualGraph key= {i} qType={question.qType} question={question.question} qChoices={question.choices} />
+      return <IndividualGraph key= {i} cType={question.cType} question={question.question} qChoices={question.choices} />
     });
 
     return (

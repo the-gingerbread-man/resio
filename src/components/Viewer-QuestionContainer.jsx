@@ -5,7 +5,7 @@ class QuestionContainer extends React.Component {
   render() {
     const choices = this.props.question.choices.map((choice, i) => {
       return (
-          <Choice key= {i} qType={this.props.question.questionType} qIdentifier={this.props.qIdentifier} cIdentifier={i} qChoice={choice} />
+          <Choice key= {i} qType={this.props.question.qType} qIdentifier={this.props.qIdentifier} cIdentifier={i} qChoice={choice} />
       )
     });
 
@@ -14,7 +14,7 @@ class QuestionContainer extends React.Component {
         <div className=".col-md-4">
           <div className="panel panel-default panel-wizard">
             <div className="panel-body">
-            <h3>{this.props.question.questionText}</h3>
+            <h3>{this.props.question.question}</h3>
             <row>
               {choices}
             </row>
