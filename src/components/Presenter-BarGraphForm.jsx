@@ -29,6 +29,8 @@ class BarGraphForm extends React.component {
   }
 }
 
+export default BarGraphForm;
+
 /*
 
 var q1 = [

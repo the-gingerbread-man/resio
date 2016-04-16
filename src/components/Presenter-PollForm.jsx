@@ -1,6 +1,6 @@
 import React from 'react';
-import AddQuestionForm from './Presenter-AddQuestionForm';
-import BarGraphForm from './Presenter-BarGraphForm';
+import AddQuestionForm from './Presenter-AddQuestionForm.jsx';
+import BarGraphForm from './Presenter-BarGraphForm.jsx';
 
 class PollForm extends React.component {
 
