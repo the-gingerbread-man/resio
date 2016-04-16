@@ -11,7 +11,7 @@ class Choice extends React.Component {
 
   render () {
     var question = '';
-    if(this.props.qType === 'multipleChoice') {
+    if(this.props.qType === 'multiple') {
       return (
         <div id="">
           <button className="btn btn-default res-btn" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.qChoice.choiceText)}>{this.props.qChoice.choiceText}</button>
@@ -22,8 +22,9 @@ class Choice extends React.Component {
       return (
         <div id="">
           <div className="row thumb-answers">
-            <i className="fa fa-thumbs-up fa-5x" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.cIdentifier)}></i>
-            <i className="fa fa-thumbs-down fa-5x" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.cIdentifier)}></i>
+            <i className="fa fa-thumbs-up fa-5x" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.qChoice.choiceText)}></i>
+            <i className="fa fa-thumbs-down fa-5x" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.qChoice.choiceText)}></i>
+
           </div>
         </div>
       );
