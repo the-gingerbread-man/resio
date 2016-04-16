@@ -13,10 +13,17 @@ class QuestionContainer extends React.Component {
     });
 
     return (
-      <div id="">
-        <h5>{this.props.question.questionText}</h5>
-        {choices}
-        <button onClick={this.props.updateQuestion}>Next</button>
+      <div className="container">
+        <div className=".col-md-4">
+          <div className="panel panel-default panel-wizard">
+            <div className="panel-body">
+            <h3>{this.props.question.questionText}</h3>
+            <row>
+              {choices}
+            </row>
+            </div>
+          </div>
+          </div>
       </div>
     );
   }

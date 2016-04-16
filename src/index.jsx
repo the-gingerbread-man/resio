@@ -7,6 +7,7 @@ const Redirect = require('react-router').Redirect;
 import { browserHistory } from 'react-router';
 import QuestionApp from './components/Viewer-QuestionApp.jsx';
 import Dashboard from './components/Presenter-Dashboard.jsx';
+import Splash from './components/Splash.jsx';
 
 class App extends React.Component {
   render() {
@@ -26,9 +27,10 @@ class App extends React.Component {
 ReactDOM.render(
   (
     <Router>
-      <Redirect from="/" to="/viewer" />
+      <Redirect from="/" to="/splash" />
       <Route name="Dashboard" path="/dash" component={Dashboard} />
       <Route name="Viewer" path="/viewer" component={QuestionApp} />
+      <Route name="Splash" path="/splash" component={Splash} />
     </Router>
   ),
   document.getElementById('app')

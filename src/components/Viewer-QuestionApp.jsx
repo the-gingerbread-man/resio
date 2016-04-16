@@ -13,6 +13,7 @@ class QuestionApp extends React.Component {
                         { cID: '', choiceText: 'Alex', selected: false },
                         { cID: '', choiceText: 'Carlos', selected: false },
                       ],
+            questionType: 'multipleChoice'
             },
 
           { qID: '',
@@ -23,6 +24,13 @@ class QuestionApp extends React.Component {
                           { cID: '', choiceText: 'DavcID', selected: false },
                         ],
             }],
+              questionType: 'multipleChoice'
+            },
+            { qID: '',
+                questionText: 'Thumbs up or thumbs down on the drinks last Thursday?',
+                choices: [ {cID: '', choiceText: 'Thumbs Up', selected: false}],
+                questionType: 'thumbs'
+              } ]
       };
   }
 

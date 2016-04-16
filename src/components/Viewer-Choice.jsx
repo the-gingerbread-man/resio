@@ -8,18 +8,25 @@ class Choice extends React.Component {
     socket.emit('viewerAnswer', response);
   }
 
-  render() {
-    return (
-      <div id="">
-        <button onClick={ this.submitAnswer.call(this,
-                          this.props.qIdentifier,
-                          this.props.cIdentifier)
-                        }
-        >
-        { this.props.qChoice.choiceText }
-        </button>
-      </div>
-    );
+  render () {
+    var question = '';
+    if(this.props.qType === 'multipleChoice') {
+      return (
+        <div id="">
+          <button className="btn btn-default res-btn" onClick={(event) => this.submitAnswer(this.props.qIdentifier,this.props.cIdentifier)}>{this.props.qChoice.choiceText}</button>
+        </div>
+      );
+    }
+    else {
+      return (
+        <div id="">
+          <div className="row thumb-answers">
+            <i className="fa fa-thumbs-up fa-5x"></i>
+            <i className="fa fa-thumbs-down fa-5x"></i>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
