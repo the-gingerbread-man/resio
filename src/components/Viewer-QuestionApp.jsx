@@ -1,49 +1,51 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Questions from './Viewer-Questions.jsx';
 
-class QuestionApp extends React.Component{
+class QuestionApp extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = { questions:
-        [ { qID: '',
+        [{ qID: '',
              questionText: 'Who has the coolest scratch project?',
-             choices: [ {cID: '', choiceText: 'Daniel', selected: false}, {cID: '', choiceText: 'Dave', selected: false},
-                         {cID: '', choiceText: 'Alex', selected: false}, {cID: '', choiceText: 'Carlos', selected: false} ],
+             choices: [{ cID: '', choiceText: 'Daniel', selected: false },
+                        { cID: '', choiceText: 'Dave', selected: false },
+                        { cID: '', choiceText: 'Alex', selected: false },
+                        { cID: '', choiceText: 'Carlos', selected: false },
+                      ],
             questionType: 'multipleChoice'
-            },
-
+          },
           { qID: '',
               questionText: 'Who is the coolest Codesmith staff member?',
-              choices: [ {cID: '', choiceText: 'Victoria', selected: false}, {cID: '', choiceText: 'Hira', selected: false},
-                         {cID: '', choiceText: 'Andy', selected: false}, {cID: '', choiceText: 'DavcID', selected: false} ],
+              choices: [{ cID: '', choiceText: 'Victoria', selected: false },
+                          { cID: '', choiceText: 'Hira', selected: false },
+                          { cID: '', choiceText: 'Andy', selected: false },
+                          { cID: '', choiceText: 'DavcID', selected: false },
+                        ],
               questionType: 'multipleChoice'
-            },
-            { qID: '',
+          },
+          { qID: '',
                 questionText: 'Thumbs up or thumbs down on the drinks last Thursday?',
                 choices: [ {cID: '', choiceText: 'Thumbs Up', selected: false}],
                 questionType: 'thumbs'
-              } ]
+          }
+        ]
       };
   }
 
   getInitialState() {
-  //   return {
-  //
-  // }
-  return { question: answer};
-}
+    return { question: answer };
+  }
 
   updateQuestion() {
 
   }
 
 
-  render () {
+  render() {
     return (
       <div id="">
-        <Questions questionState={this.state.questions} updateQuestion= {this.updateQuestion}/>
+        <Questions questionState={this.state.questions} updateQuestion= {this.updateQuestion} />
       </div>
     );
   }

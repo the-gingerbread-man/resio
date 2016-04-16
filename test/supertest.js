@@ -11,38 +11,25 @@ const chai = require('chai');
 const expect = chai.expect;
 const assert = chai.assert;
 
-describe('HTTP Server', () => {
-	
-	describe('/', () => {
-		
-		describe('GET', () => {
-			it('responds with 200 status', done => {
+describe('HTTP Server', function() {
+	describe('/', function() {
+		describe('GET', function() {
+
+			it('Status: 200 && Content-Type: HTML', function(done) {
 				request(HOST)
 					.get('/')
-					.expect(200, done);
-			});
-			
-			it('responds with text/html content type', done => {
-				request(HOST)
-					.get('/')
+					.expect(200)
 					.expect('Content-Type', /text\/html/, done);
 			});
 		});
-	
 	});
 
-	describe('/bundle.js', () => {
-
-		describe('GET', () => {
-			it('responds with 200 status', done => {
+	describe('/bundle.js', function() {
+		describe('GET', function() {
+			it('Status: 200 && Content-Type: Javascript', function (done) {
 				request(HOST)
 					.get('/bundle.js')
-					.expect(200, done);
-			});
-
-			it('responds with text/javascript content type', done => {
-				request(HOST)
-					.get('/bundle.js')
+					.expect(200)
 					.expect('Content-Type', /application\/javascript/, done);
 			});
 		});

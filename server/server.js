@@ -1,29 +1,26 @@
-"use strict";
-const fs = require('fs');
+'use strict'; // eslint-disable-line strict
+const fs = require('fs'); // eslint-disable-line no-unused-vars
 const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
 
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const app = express();
+const http = require('http').Server(app); // eslint-disable-line new-cap
+const io = require('socket.io')(http);
 
 app.use(express.static('client'));
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + './../client/index.html'));
-});
-app.get('/client/bundle.js', function (req, res) {
-  res.sendFile(path.join(__dirname + './../client/bundle.js'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(`${__dirname}./../client/index.html`));
 });
 
-io.on('connection', function(socket){
+app.get('/client/bundle.js', (req, res) => {
+  res.sendFile(path.join(`${__dirname}./../client/bundle.js`));
+});
 
-  socket.on('viewerAnswer', function(data) {
-  	console.log('Server Response: ' + data);
-  	io.emit('serverResponse', data);
+io.on('connection', socket => {
+  socket.on('viewerAnswer', data => {
+    io.emit('serverResponse', data);
   });
-
 });
 
 http.listen(3000);
-

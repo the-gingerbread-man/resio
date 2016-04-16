@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Graphs from './Presenter-Graphs.jsx';
 const socket = io();
 
-class Dashboard extends React.Component{
+class Dashboard extends React.Component {
 
   constructor(props) {
-  super(props);
+    super(props);
+    const self = this;
+    let answerIncrease;
     this.state = {
         'Carlos.MyPoll.0.0': 0,
         'Carlos.MyPoll.0.1': 0,
@@ -46,33 +47,28 @@ class Dashboard extends React.Component{
         //questions:
         // [ { qID: 0,
         //      questionText: 'Who has the coolest scratch project?',
-        //      choices: [ {answered: '', choiceText: 'Daniel', selected: false}, {answered: '', choiceText: 'Dave', selected: false},
-        //                  {answered: '', choiceText: 'Alex', selected: false}, {answered: '', choiceText: 'Carlos', selected: false} ]
+        //      choices: [  {answered: '', choiceText: 'Daniel', selected: false},
+        //                  {answered: '', choiceText: 'Dave', selected: false},
+        //                  {answered: '', choiceText: 'Alex', selected: false},
+        //                  {answered: '', choiceText: 'Carlos', selected: false}
+        //                ],
         //     },
         //   { qID: 1,
         //       questionText: 'Who is the coolest Codesmith staff member?',
-        //       choices: [ {answered: '', choiceText: 'Victoria', selected: false}, {answered: '', choiceText: 'Hira', selected: false},
-        //                  {answered: '', choiceText: 'Andy', selected: false}, {answered: '', choiceText: 'DavcID', selected: false} ]
-        //     } ]
+        //       choices: [ {answered: '', choiceText: 'Victoria', selected: false},
+        //                  {answered: '', choiceText: 'Hira', selected: false},
+        //                  {answered: '', choiceText: 'Andy', selected: false},
+        //                  {answered: '', choiceText: 'DavcID', selected: false}
+        //                  ],
+        //     }
+        // ],
+      socket.on('serverResponse', function(data) {
+        answerIncrease = { data: self.state[data]++ };
+        self.setState(answerIncrease);
+      });
+    };
 
-
-    // var self = this;
-    // var datas = {qID: 0, cID: 3};
-    // socket.on('serverResponse', function(data) {
-    //   var answer = {self.state.Questions[datas.qID].answers[datas.cID]: self.state.Questions[datas.qID].answers[datas.cID]++};
-    //   self.setState( answer );
-    // });
-    var self = this;
-    socket.on('serverResponse', function(data) {
-      var answerIncrease = {data: self.state[data]++};
-      self.setState(answerIncrease);
-    });
-
-
-  };
-
-
-  render () {
+  render() {
     return (
       <div>
       <h5>Showing Responses</h5>

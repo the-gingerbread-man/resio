@@ -1,14 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 const socket = io();
 
-class Choice extends React.Component{
+class Choice extends React.Component {
 
-  submitAnswer(qIdentifier,cIdentifier) {
-    var response = ('Carlos.'+'MyPoll.'+qIdentifier+'.'+cIdentifier).toString();
-    console.log(response);
-      //socket.emit('viewerAnswer', response);
-      socket.emit('viewerAnswer', response);
+  submitAnswer(qIdentifier, cIdentifier) {
+    const response = `Carlos.MyPoll.${qIdentifier}.${cIdentifier}`;
+    socket.emit('viewerAnswer', response);
   }
 
   render () {

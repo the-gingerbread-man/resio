@@ -1,12 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import IndividualGraph from './Presenter-IndividualGraph.jsx';
 import rd3 from 'react-d3';
 
 var BarChart = rd3.BarChart;
 var PieChart = rd3.PieChart;
 
-class Graphs extends React.Component{
+class Graphs extends React.Component {
 
   render () {
   	var q1 = [
