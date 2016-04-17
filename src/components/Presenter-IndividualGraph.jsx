@@ -10,7 +10,7 @@ class IndividualGraph extends React.Component{
   render () {
 		var graph;
 		var title = this.props.question;
-		var qType = this.props.cType;
+		var cType = this.props.cType;
 		var eachChoice = this.props.qChoices['0']; 
 
 		if (cType === 'bar') {

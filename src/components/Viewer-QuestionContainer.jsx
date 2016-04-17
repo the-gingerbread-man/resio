@@ -1,11 +1,11 @@
 import React from 'react';
-import Choice from './Viewer-Choice.jsx';
+import Choices from './Viewer-Choices.jsx';
 
 class QuestionContainer extends React.Component {
   render() {
     const choices = this.props.question.choices.map((choice, i) => {
       return (
-          <Choice key= {i} qType={this.props.question.qType} qIdentifier={this.props.qIdentifier} cIdentifier={i} qChoice={choice} />
+          <Choices key= {i} qType={this.props.question.qType} qIdentifier={this.props.qIdentifier} cIdentifier={i} qChoice={choice} />
       )
     });
 
