@@ -15,7 +15,7 @@ class PollForm extends React.Component {
     // TO DO: Add functionality that changes the type of question by the
     // type parameter
     const emptyChart = {
-      chartType: '',
+      chartType: 'bar-chart',
       data: {
         label: 'New Question',
         values: [],
@@ -46,6 +46,7 @@ class PollForm extends React.Component {
   }
 
   render() {
+    console.log('Rendering PollForm, this.state.questions= ', this.state.questions);
     const questions = this.state.questions.map((data, index) => {
       switch(data.chartType) {
         case 'bar-chart':

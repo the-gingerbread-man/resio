@@ -24,7 +24,7 @@ class AddQuestionForm extends React.Component {
     console.log(this.chartNames[this.state.selectedChartType]);
     // this.props.addQuestion(this.chartNames[this.state.selectedChartType]);
     this.props.addQuestion('bar-chart');
-
+    
     // this.setState({ selectedChartType: null });
   }
 

@@ -8,7 +8,9 @@ class BarChartForm extends React.Component {
   }
 
   render() {
-    const choices = this.props.data.values.map(choice => {
+    console.log('New Bar Chart',
+                'this.props=', this.props);
+    const choices = this.props.data.data.values.map(choice => {
       return <input type="text" value={choice.x} />;
     });
     return (
