@@ -6,10 +6,12 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "nodemon server/server.js",
-    "build": "browserify -t [babelify] src/index.jsx -o client/bundle.js",
-    "lint": "eslint server/server.js",
-    "pretest": "npm run lint",
-    "test": "export NODE_ENV=test && mocha --timeout 3000 test/"
+    "partial-lint": "eslint",
+    "full-lint": "eslint **.js & eslint server/**.js & eslint src/**.jsx & eslint src/**/**.jsx",
+    "pretest": "npm run full-lint",
+    "test": "export NODE_ENV=test && mocha --timeout 3000 test/",
+    "prebuild": "npm run test",
+    "build": "browserify -t [babelify] src/index.jsx -o client/bundle.js"
   },
   "repository": {
     "type": "git",
