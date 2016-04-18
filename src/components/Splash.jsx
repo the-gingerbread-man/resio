@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-class Splash extends React.Component{
+class Splash extends React.Component {
   render () {
     return (
       <div className="container container-table">
