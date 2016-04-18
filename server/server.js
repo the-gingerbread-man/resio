@@ -3,8 +3,17 @@ const fs = require('fs'); // eslint-disable-line no-unused-vars
 const path = require('path');
 const express = require('express');
 
+//create an instance of an express application
 const app = express();
+
+//our express app will act as a handler to an http server - notice '.Server' method
 const http = require('http').Server(app); // eslint-disable-line new-cap
+
+//require in socket.io
+//the html page also needs a script tag - see client/index.html
+//require in socket.io and pass the http server to it
+//the socket is now listening on our server
+//this triggers the 'connection' event that io listens for below
 const io = require('socket.io')(http);
 
 app.use(express.static('client'));
@@ -17,6 +26,11 @@ app.get('/client/bundle.js', (req, res) => {
   res.sendFile(path.join(`${__dirname}./../client/bundle.js`));
 });
 
+//when the server starts, io needs to listen for the 'connection' event
+//that event triggers a callback where it is common practice to name the parameter 'socket'
+//'.on' acts as an event listener - socket will only listen for events
+//while only io will emit events with the '.emit' method
+//this is different in the react components where socket will both listen and emit
 io.on('connection', socket => {
   socket.on('viewerAnswer', data => {
     io.emit('serverResponse', data);
@@ -54,4 +68,5 @@ var database = {
  ]
 };
 
+//http is our server and therefore needs to be listening on a port
 http.listen(3000);
