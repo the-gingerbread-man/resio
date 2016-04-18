@@ -11,10 +11,10 @@ class IndividualGraph extends React.Component{
 		var graph;
 		var title = this.props.question;
 		var cType = this.props.cType;
-		var eachChoice = this.props.qChoices['0']; 
+		var eachChoice = this.props.qChoices['0'];
+		var valueArray = [];
 
 		if (cType === 'bar') {
-			var valueArray = [];
 			for (var key in eachChoice) {
 				var bar = {x: key, y: eachChoice[key]};
 				valueArray.push(bar);
@@ -24,21 +24,26 @@ class IndividualGraph extends React.Component{
 		}
 
 		else if (cType === 'pie') {
-      var valueArray = [];
       var total = [];
       for (var key in eachChoice) {
       	total.push(eachChoice[key]);
       }
       var newTotal = total.reduce(function(a, b) {return a + b;});
-      for (var key in eachChoice) {
-      	var piePiece = {label: key, value: (eachChoice[key]*100/newTotal).toFixed(2)}
-      	valueArray.push(piePiece);
+      if (newTotal) {
+	      for (var key in eachChoice) {
+	      	if (eachChoice[key]) {
+		      	var piePiece = {label: key, value: Math.floor(eachChoice[key]*100/newTotal)}
+		      	valueArray.push(piePiece);
+		      }
+	      }
+        var component = <PieChart data={valueArray} width={500} height={400} radius={100} innerRadius={20} sectorBorderColor="white" title={title} />
+      } else {
+      	var component = <PieChart data={[{label: 'No Data', value: 0}]} width={500} height={400} radius={100} innerRadius={20} sectorBorderColor="white" title={title} />
       }
-      var component = <PieChart data={valueArray} width={400} height={400} radius={100} innerRadius={20} sectorBorderColor="white" title={title} />
 		}
 
     return (
-      <div id="">
+      <div id='graphText'>
         {component}
       </div>
     );

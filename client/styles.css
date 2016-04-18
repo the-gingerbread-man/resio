@@ -70,27 +70,32 @@ p, div {
   background:none;
   border-color: white;
 }
+
 a:visited {
   color: white;
 }
+
 .btn {
   color: #FF5A5F;
   background:white;
   border-color: #FF5A5F;
 }
-å
+
 .btn start{
   color: #FF5A5F;
   background:#FF5A5F;
   width:200px;
   height: 300px;
+}
 
 .fa {
   color: #FF5A5F;
 }
+
 .thumb-answers {
   margin-left: 26%;
 }
+
 a {
   color:white;
 }
@@ -119,15 +124,17 @@ div.flexbox {
 div.panel-wizard {
      flex: 1 1 auto;
  }
-<<<<<<< HEAD
+
 .instructions {
   width:500px;
 }
+
 .blockquote {
   margin-left: 33%;
   margin-top: 8%;
   margin-bottom:10%
 }
+
 .display-1 {
   color:white;
 }
