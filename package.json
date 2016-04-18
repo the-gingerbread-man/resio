@@ -7,7 +7,7 @@
     "prestart": "npm run build",
     "start": "nodemon server/server.js",
     "build": "browserify -t [babelify] src/index.jsx -o client/bundle.js",
-    "lint": "eslint server/server.js",
+    "lint": "eslint server/server.js & eslint src/*.jsx & eslint src/components/*.jsx",
     "pretest": "npm run lint",
     "test": "export NODE_ENV=test && mocha --timeout 3000 test/"
   },

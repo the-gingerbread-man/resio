@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
+//Thank you page component for the viewer. 
 class ThanksComponent extends React.Component{
   render () {
     return (
