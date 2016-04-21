@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "npm run build",
     "start": "nodemon server/server.js",
-    "partial-lint": "eslint",
+    "lint": "eslint",
     "full-lint": "eslint **.js & eslint server/**.js & eslint src/**.jsx & eslint src/**/**.jsx",
     "pretest": "npm run full-lint",
     "test": "export NODE_ENV=test && mocha --timeout 3000 test/",
