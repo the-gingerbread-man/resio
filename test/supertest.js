@@ -6,10 +6,11 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const HOST = `http://localhost:${PORT}`;
 
-const chai = require('chai');
+const { expect, assert } = require('chai');
+// const chai = require('chai');
 // const { expect, assert } = chai;
-const expect = chai.expect;
-const assert = chai.assert;
+// const expect = chai.expect;
+// const assert = chai.assert;
 
 describe('HTTP Server', function() {
 	describe('/', function() {
