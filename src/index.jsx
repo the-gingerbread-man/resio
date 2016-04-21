@@ -1,4 +1,4 @@
-import React from 'react';
+<import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory, Link, Redirect, Route, Router } from 'react-router';
 import QuestionApp from './components/Viewer-QuestionApp.jsx';
