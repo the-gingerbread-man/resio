@@ -9,8 +9,8 @@
     "lint": "eslint",
     "full-lint": "eslint **.js & eslint server/**.js & eslint src/**.jsx & eslint src/**/**.jsx",
     "test": "export NODE_ENV=test && mocha --timeout 3000 test/",
-    "prebuild": "npm run test",
-    "build": "browserify -t [babelify] src/index.jsx -o client/build/bundle.js"
+    "prebuild": "",
+    "build": "browserify -t [babelify] client/src/index.jsx -o client/build/bundle.js"
   },
   "repository": {
     "type": "git",

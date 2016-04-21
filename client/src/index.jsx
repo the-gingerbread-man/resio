@@ -1,4 +1,4 @@
-<import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory, Link, Redirect, Route, Router } from 'react-router';
 import QuestionApp from './components/Viewer-QuestionApp.jsx';
@@ -22,9 +22,9 @@ class App extends React.Component {
     );
   }
 }
-//Below is our config for React Router. All of the below routes are routes for our views. Our server
-//handles all of our api routes. React Router is taking care of linking between and rendering components
-//based on where the viewer is.
+// Below is our config for React Router. All of the below routes are routes for our views. Our server
+//  handles all of our api routes. React Router is taking care of linking between and rendering components
+//  based on where the viewer is.
 ReactDOM.render(
   (
     <Router>
